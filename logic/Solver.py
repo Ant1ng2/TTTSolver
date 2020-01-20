@@ -16,6 +16,7 @@ class Solver():
         self.memory = {}
         self.remoteness = {}
         self.base = game.getBase()
+        self.mp = mp
         if mp: self.solve = self.solveTraverseMP
         if not mp: self.solve = self.solveTraverse
         path = os.path.join(os.getcwd() + r'/solved/', name)

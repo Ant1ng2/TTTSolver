@@ -140,7 +140,8 @@ if __name__ == '__main__':
         wrapped = wrapper(lambda game, tier : [i.serialize() for i in game.generateTierBoards(game, tier)], TTT(size=3), i) 
         print(timeit(wrapped, number=1))
         print(wrapped())"""
-    wrapped = wrapper(execute, size=3)
+    wrapped = wrapper(execute, size=4, mp=True)
     print(timeit(wrapped, number=1))
-    wrapped = wrapper(execute, tier=False, size=3)
+    wrapped().play()
+    wrapped = wrapper(execute, tier=False, size=4)
     print(timeit(wrapped, number=1))
